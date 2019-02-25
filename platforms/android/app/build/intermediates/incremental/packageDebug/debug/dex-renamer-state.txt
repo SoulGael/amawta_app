@@ -1,0 +1,4 @@
+#Fri Feb 22 08:12:31 COT 2019
+base.0=C\:\\xampp\\htdocs\\amawta_app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

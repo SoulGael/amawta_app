@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Amawta</title>
+    <link rel="stylesheet" href="framework7/css/framework7.min.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="color-theme-green">
+    <div class="page" id="app" data-name="inicio">
+        <!-- Status bar overlay for fullscreen mode-->
+        <div class="statusbar"></div>
+        <!-- Left panel with cover effect-->
+        <div class="panel panel-left panel-cover theme-light">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="title">opciones</div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="list" id="list_menu">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right panel with reveal effect-->
+        <div class="panel panel-right panel-reveal theme-dark">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="title">Right Panel</div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block">Right panel content goes here</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Views/Tabs container -->
+        <div class="views tabs ios-edges">
+            <!-- Tabbar for switching views-tabs -->
+            <div class="toolbar tabbar-labels toolbar-bottom-md">
+                <div class="toolbar-inner">
+                    <a href="#view-home" class="tab-link tab-link-active">
+                        <i class="icon f7-icons ios-only">home</i>
+                        <i class="icon f7-icons ios-only icon-ios-fill">home_fill</i>
+                        <i class="icon material-icons md-only">book</i>
+                        <span class="tabbar-label">Noticias</span>
+                    </a>
+                    <a href="#view-nosotros" class="tab-link">
+                        <i class="icon f7-icons ios-only">list</i>
+                        <i class="icon f7-icons ios-only icon-ios-fill">list_fill</i>
+                        <i class="icon material-icons md-only">business</i>
+                        <span class="tabbar-label">Nosotros</span>
+                    </a>
+                    <a href="#view-ofertas" class="tab-link">
+                        <i class="icon f7-icons ios-only">settings</i>
+                        <i class="icon f7-icons ios-only icon-ios-fill">settings_fill</i>
+                        <i class="icon material-icons md-only">check</i>
+                        <span class="tabbar-label">Ofertas</span>
+                    </a>
+                    <a href="#view-acercade" class="tab-link">
+                        <i class="icon f7-icons ios-only">settings</i>
+                        <i class="icon f7-icons ios-only icon-ios-fill">settings_fill</i>
+                        <i class="icon material-icons md-only">person</i>
+                        <span class="tabbar-label">Acerca de</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
+            <div id="view-home" class="view view-main tab  tab-active">
+                <!-- Page, data-name contains page name which can be used in page callbacks -->
+                <div class="page" data-name="home" id="contenido-home">
+                    <!-- Top Navbar -->
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+                            <div class="left">
+                                <a href="#" id="item_menu" style="display: none;" class="link icon-only panel-open" data-panel="left">
+                                    <i class="icon f7-icons ios-only" data-step="5" data-intro="Aqui puedes ver tus opciones">menu</i>
+                                    <i class="icon material-icons md-only" data-step="5" data-intro="Aqui puedes ver tus opciones">menu</i>
+                                </a>
+                                <img style="padding-left: 5px;" src="img/icono.jpg" width="44" />
+                            </div>
+                            <div class="title sliding"> AMAWTA</div>
+                            <div class="right" id="iconologin" data-step="6" data-intro="Para iniciar sesion selecciona aqui">
+                                <a href="#" class="link icon-only login-screen-open" data-login-screen="#my-login-screen">
+                                    <i class="icon material-icons md-only">person_pin</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="demo"></div>
+                    <!-- Scrollable page content-->
+                    <div class="page-content ptr-content" data-ptr-distance="55" id="refresh-ptr">
+                        <div class="ptr-preloader">
+                            <div class="preloader"></div>
+                            <div class="ptr-arrow"></div>
+                        </div>
+                        <div class="list" id="lista_noticias">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Catalog View -->
+            <div id="view-nosotros" class="view tab">
+                <!-- Catalog page will be loaded here dynamically from /catalog/ route -->
+            </div>
+            <!-- Settings View -->
+            <div id="view-ofertas" class="view tab">
+                <!-- Settings page will be loaded here dynamically from /settings/ route -->
+            </div>
+            <div id="view-acercade" class="view tab">
+                <!-- Settings page will be loaded here dynamically from /settings/ route -->
+            </div>
+            <div class="login-screen" id="my-login-screen">
+                <div class="view">
+                    <div class="page">
+                        <div class="navbar">
+                            <div class="navbar-inner sliding">
+                                <div class="left">
+                                    <a href="#" class="link back">
+                                        <i class="icon icon-back  login-screen-close"></i>
+                                        <span class="ios-only">Back</span>
+                                    </a>
+                                </div>
+                                <div class="title" style="font-size:.7em">Autenticación</div>
+                                <div class="right">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-content login-screen-content">
+                            <div class="login-screen-title"> <img src="img/icono.jpg" width="50" /></div>
+                            <!-- Login form -->
+                            <form>
+                                <div class="list">
+                                    <ul>
+                                        <li class="item-content item-input">
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Usuario</div>
+                                                <div class="item-input-wrap">
+                                                    <input type="text" name="username" id="usuario" placeholder="Usuario">
+                                                    <span class="input-clear-button"></span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="item-content item-input">
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Contraseña</div>
+                                                <div class="item-input-wrap">
+                                                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                                                    <span class="input-clear-button"></span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="list">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="item-link list-button" onclick="login()">Ingresar</a>
+                                        </li>
+                                    </ul>
+                                    <div class="block-footer">
+                                        <p>Puedes registrarte <a class="link" href="/registrarse/">Aqui</a></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cordova -->
+        <!--
+  <script src="cordova.js"></script>
+  -->
+        <!-- Framework7 library -->
+        <script src="framework7/js/framework7.min.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="cordova.js"></script>
+        <!-- App routes -->
+        <script src="js/routes.js"></script>
+        <!-- Your custom app scripts -->
+        <script src="js/app.js"></script>
+        <script src="js/noticias.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/ofertas.js"></script>
+</body>
+
+</html>
